@@ -1,5 +1,4 @@
-from connectors.api_octopi_connector import Octopi_API_Connector
-import json
+from connectors.api.octopi import Octopi_API_Connector
 
 def build_client_query(user_query):
     query_object = {
@@ -46,7 +45,8 @@ Additionally, here are the API references I currently have"""
     gpt_query = rules + support_rules + logical_query + user_query
                 # get_response_type_query("message-only") + \
 
-    return gpt_query
+    # return gpt_query
+    return f'The users has requested the following, please provide the best function to complete this: {user_query}'
 
 def parse_and_validate_response(res):
     try:

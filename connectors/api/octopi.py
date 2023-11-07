@@ -1,5 +1,5 @@
 import requests
-from .api_base_connector import API_Base_Connector
+from .base import API_Base_Connector
 
 class Octopi_API_Connector(API_Base_Connector):
     url = ""

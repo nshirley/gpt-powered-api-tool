@@ -1,14 +1,16 @@
 from dotenv import load_dotenv
 from query_builder import build_client_query, parse_and_validate_response
-from ai.gpt import send_query
+from ai.gpt.queries import send_query
 
 load_dotenv()
 
-text = input("Hello, how can I help you today?")
+# text = "I need to start a print of cat.gcode" #input("Hello, how can I help you today?")
+text = 'The printer responded with the following json, can you explain what happened with a human readable description?'
+print(f"Starting app with prompt \"{text}\"")
 
 query = build_client_query(text)
-print(query)
 
 res = send_query(query)
-parsed = parse_and_validate_response(res)
-print(parsed)
+
+print(res)
+# parsed = parse_and_validate_response(res)
